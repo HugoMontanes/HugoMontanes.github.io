@@ -119,11 +119,9 @@ Section#Sobre_mi{
 }
 Section#Sobre_mi>div{
   position: relative;
-  left:5em;
   top: 10%;
   word-wrap: break-word;
   overflow: hidden;
-  width: 100vw;
 }
 Section#Sobre_mi>div>h2{
   font-family: 'Montserrat-VariableFont_wght', serif;
