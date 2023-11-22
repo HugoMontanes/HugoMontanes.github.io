@@ -122,6 +122,7 @@ Section#Sobre_mi>div{
   top: 10%;
   word-wrap: break-word;
   overflow: hidden;
+  padding-left: 5vw;
 }
 Section#Sobre_mi>div>h2{
   font-family: 'Montserrat-VariableFont_wght', serif;
