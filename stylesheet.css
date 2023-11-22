@@ -167,13 +167,6 @@ Section#Sobre_mi>div>p{
   padding-bottom: 7%;
   padding-top: 5%;
 }
-Section#Experiencia{
-  width:100%;
-  background-color: gainsboro;
-  height: 20vh;
-  font-family: 'Montserrat-VariableFont_wght', serif;
-  display: flex;
-}
 Section#Contactos{
   height: 25vh;
   width: 100%;
