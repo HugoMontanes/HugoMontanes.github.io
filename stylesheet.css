@@ -167,6 +167,10 @@ Section#Sobre_mi>div>p{
   padding-bottom: 7%;
   padding-top: 5%;
 }
+Section#Experience{
+  width: 100%;
+  height: 20vh;
+}
 Section#Contactos{
   height: 25vh;
   width: 100%;
