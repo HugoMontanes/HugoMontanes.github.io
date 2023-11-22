@@ -103,6 +103,7 @@ Section#Portada>div{
   left:45%;
   width:50%;
   top: 45%;
+  padding-left: 5vw;
 }
 div> h1{
   float: right;
