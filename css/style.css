@@ -1225,9 +1225,9 @@ footer {
 }
 footer .social a {
   color: #c49b66;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 70px;
+  height: 70px;
+  line-height: 90px;
   margin: 15px 10px;
   position: relative;
   z-index: 2;
