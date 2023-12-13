@@ -870,23 +870,8 @@
                                 <img src="img/goodOnes/HLSL/HLSL_Material1.PNG" alt="image">
                                 <div class="item-img-overlay valign">
                                     <div class="overlay-info full-width vertical-center">
-                                        <h6>Niagara System</h6>
-                                        <p>Niagara system that controls all the events.</p>
-                                    </div>
-                                    <a href="img/portfolio/7.jpg" class="popimg">
-                                        <i class="icofont icofont-image"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="items HLSL">
-                            <div class="item-img">
-                                <img src="img/goodOnes/HLSL/HLSL_Material1.PNG" alt="image">
-                                <div class="item-img-overlay valign">
-                                    <div class="overlay-info full-width vertical-center">
-                                        <h6>Niagara System</h6>
-                                        <p>Niagara system that controls all the events.</p>
+                                        <h6>Shader 1</h6>
+                                        <p>Code: return(step((ceil (uv * param) / param) - (sin (t)), 0.5));</p>
                                     </div>
                                     <a href="img/portfolio/7.jpg" class="popimg">
                                         <i class="icofont icofont-image"></i>
@@ -900,8 +885,9 @@
                                 <img src="img/goodOnes/HLSL/HLSL_Material2.PNG" alt="image">
                                 <div class="item-img-overlay valign">
                                     <div class="overlay-info full-width vertical-center">
-                                        <h6>Niagara System</h6>
-                                        <p>Niagara system that controls all the events.</p>
+                                        <h6>Shader 2</h6>
+                                        <p>Code: float d=length(position-(frac(uv*gridSize)));
+                                            return d <= radius;</p>
                                     </div>
                                     <a href="img/portfolio/7.jpg" class="popimg">
                                         <i class="icofont icofont-image"></i>
@@ -915,8 +901,13 @@
                                 <img src="img/goodOnes/HLSL/HLSL_Material3.PNG" alt="image">
                                 <div class="item-img-overlay valign">
                                     <div class="overlay-info full-width vertical-center">
-                                        <h6>Niagara System</h6>
-                                        <p>Niagara system that controls all the events.</p>
+                                        <h6>Shader 3</h6>
+                                        <p>Code: float2 tex = frac(float2(uv.x * grid.x + offset.x, uv.y * grid.y + offset.y));
+
+                                            if(tex.x>=dim.x|tex.x<=-dim.x||tex.y>=dim.y||tex.y<=-dim.y)
+                                            return(cementCol);
+                                            
+                                            return (brickCol);</p>
                                     </div>
                                     <a href="img/portfolio/7.jpg" class="popimg">
                                         <i class="icofont icofont-image"></i>
