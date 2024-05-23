@@ -691,10 +691,12 @@ section:hover .section-head h4 {
   border-radius: 5px;
   overflow: hidden;
 }
+
 .portfolio .item-img:hover .item-img-overlay {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+
 }
 .portfolio .item-img:hover h6 {
   -webkit-transform: translateY(0);
