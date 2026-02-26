@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -c \"c:\\\\Users\\\\hugom\\\\Documents\\\\GitHub\\\\HugoMontanes.github.io\\\\css\\\\plugins\\\\fontawesome-all.min.css\")",
+      "Bash(cmp -l \"c:\\\\Users\\\\hugom\\\\Documents\\\\GitHub\\\\HugoMontanes.github.io\\\\css\\\\style.css\" \"c:\\\\Users\\\\hugom\\\\Documents\\\\GitHub\\\\HugoMontanes.github.io\\\\css\\\\style-light.css\")",
+      "Bash(python3 -c \":*)",
+      "Bash(node -e \":*)",
+      "Bash(where node)",
+      "Bash(where python)",
+      "Bash(where python3)",
+      "Bash(C:/Users/hugom/AppData/Local/Programs/Python/Python312/python.exe -c \":*)"
+    ]
+  }
+}

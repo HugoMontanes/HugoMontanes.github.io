@@ -32,37 +32,15 @@ $(function() {
 
 
     // navbar scrolling background
-    wind.on("scroll",function () {
+    wind.on("scroll", function () {
 
         var bodyScroll = wind.scrollTop(),
-            navbar = $(".navbar")
+            navbar = $(".navbar");
 
-        if(bodyScroll > 100){
-
+        if (bodyScroll > 100) {
             navbar.addClass("nav-scroll");
-
-        }else{
-
+        } else {
             navbar.removeClass("nav-scroll");
-        }
-    });
-
-    // navbar scrolling background
-    wind.on("scroll",function () {
-
-        var bodyScroll = wind.scrollTop(),
-            navLight = $(".nav-light"),
-            logo = $(".nav-light .logo> img");
-
-        if(bodyScroll > 100){
-
-            navLight.addClass("nav-scroll");
-            logo.attr('src', 'img/logo-dark.png');
-
-        }else{
-
-            navLight.removeClass("nav-scroll");
-            logo.attr('src', 'img/logo-light.png');
         }
     });
 
@@ -76,9 +54,9 @@ $(function() {
     // progress bar
     wind.on('scroll', function () {
         $(".skill-progress .progres").each(function () {
-            var bottom_of_object = 
+            var bottom_of_object =
             $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = 
+            var bottom_of_window =
             $(window).scrollTop() + $(window).height();
             var myVal = $(this).attr('data-value');
             if(bottom_of_window > bottom_of_object) {
@@ -93,7 +71,7 @@ $(function() {
     // sections background image from data background
     var pageSection = $(".bg-img, section");
     pageSection.each(function(indx){
-        
+
         if ($(this).attr("data-background")){
             $(this).css("background-image", "url(" + $(this).data("background") + ")");
         }
@@ -115,7 +93,7 @@ $(function() {
 
 // === window When Loading === //
 
-$(window).on("load",function (){
+$(window).on("load", function (){
 
     var wind = $(window);
 
@@ -128,31 +106,22 @@ $(window).on("load",function (){
 
 
     // isotope
-    $('.gallery').isotope({
-      // options
-      itemSelector: '.items',
-      percentPosition: true,
-      masonry: {
-        // use element for option
-        columnWidth: '.width2'
-      }
-    });
-
     var $gallery = $('.gallery').isotope({
-      // options
+        itemSelector: '.items',
+        layoutMode: 'masonry',
+        percentPosition: true,
+        masonry: {
+            columnWidth: '.width2',
+            gutter: 0
+        },
+        transitionDuration: '0.5s'
     });
 
     // filter items on button click
-    $('.filtering').on( 'click', 'span', function() {
+    $('.filtering').on('click', 'span', function () {
 
         var filterValue = $(this).attr('data-filter');
-
         $gallery.isotope({ filter: filterValue });
-
-    });
-
-    $('.filtering').on( 'click', 'span', function() {
-
         $(this).addClass('active').siblings().removeClass('active');
 
     });
