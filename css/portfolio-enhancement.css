@@ -37,6 +37,32 @@
     font-size: 46px;
 }
 
+.quick-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.highlight-pill {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(196,155,102,.15);
+    border-radius: 6px;
+    padding: 14px 12px;
+}
+
+.highlight-pill strong {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.highlight-pill span {
+    color: #8f8f8f;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
 .skill-box {
     padding: 20px;
     background: rgba(200,200,200,.03);
@@ -296,6 +322,10 @@
     .skill-box,
     .competency-item {
         margin-bottom: 30px;
+    }
+
+    .quick-highlights {
+        grid-template-columns: 1fr;
     }
     
     .opportunities-box {
