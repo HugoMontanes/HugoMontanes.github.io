@@ -102,35 +102,39 @@ $(window).on("load", function (){
 
 
     // stellar
-    wind.stellar();
+    if ($.fn.stellar) {
+        wind.stellar();
+    }
 
 
     // isotope
-    var $gallery = $('.gallery').isotope({
-        itemSelector: '.items',
-        layoutMode: 'masonry',
-        percentPosition: true,
-        masonry: {
-            columnWidth: '.width2',
-            gutter: 0
-        },
-        transitionDuration: '0.5s'
-    });
+    var $gallery = $('.gallery');
+    if ($gallery.length && $.fn.isotope) {
+        $gallery = $gallery.isotope({
+            itemSelector: '.items',
+            layoutMode: 'masonry',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.width2',
+                gutter: 0
+            },
+            transitionDuration: '0.5s'
+        });
 
-    // filter items on button click
-    $('.filtering').on('click', 'span', function () {
+        // filter items on button click
+        $('.filtering').on('click', 'span', function () {
 
-        var filterValue = $(this).attr('data-filter');
-        $gallery.isotope({ filter: filterValue });
-        $(this).addClass('active').siblings().removeClass('active');
+            var filterValue = $(this).attr('data-filter');
+            $gallery.isotope({ filter: filterValue });
+            $(this).addClass('active').siblings().removeClass('active');
 
-    });
+        });
+    }
 
 
     // contact form validator
-    $('#contact-form').validator();
-
-    $('#contact-form').on('submit', function (e) {
+    var $contactForm = $('#contact-form');
+    $contactForm.on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
             var url = "contact.php";
 
@@ -145,13 +149,16 @@ $(window).on("load", function (){
 
                     var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
                     if (messageAlert && messageText) {
-                        $('#contact-form').find('.messages').html(alertBox);
-                        $('#contact-form')[0].reset();
+                        $contactForm.find('.messages').html(alertBox);
+                        $contactForm[0].reset();
                     }
                 }
             });
             return false;
         }
     });
+    if ($contactForm.length && $.fn.validator) {
+        $contactForm.validator();
+    }
 
 });

@@ -21,6 +21,22 @@
     font-weight: 600;
 }
 
+.skill-inline-icon {
+    color: var(--main-color);
+    margin-right: 10px;
+    width: 18px;
+    text-align: center;
+}
+
+.social-brand-icon {
+    font-size: 34px;
+    line-height: 1;
+}
+
+.social-brand-icon-lg {
+    font-size: 46px;
+}
+
 .skill-box {
     padding: 20px;
     background: rgba(200,200,200,.03);
@@ -38,6 +54,8 @@
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .skill-box p {
