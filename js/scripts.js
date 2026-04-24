@@ -96,6 +96,11 @@ $(function() {
 $(window).on("load", function (){
 
     var wind = $(window);
+    var layoutFrame = null;
+    var requestFrame = window.requestAnimationFrame || function (callback) {
+        return window.setTimeout(callback, 16);
+    };
+    var cancelFrame = window.cancelAnimationFrame || window.clearTimeout;
 
     // Preloader
     $(".loading").fadeOut(500);
@@ -110,6 +115,31 @@ $(window).on("load", function (){
     // isotope
     var $gallery = $('.gallery');
     if ($gallery.length && $.fn.isotope) {
+        $gallery.addClass('is-layout-pending');
+
+        var scheduleGalleryLayout = function () {
+            if (!$gallery.data('isotope')) {
+                return;
+            }
+
+            if (layoutFrame) {
+                cancelFrame(layoutFrame);
+            }
+
+            layoutFrame = requestFrame(function () {
+                $gallery.isotope('layout');
+
+                // Run a second pass shortly after to catch late size updates
+                // from lazy-loaded images and animated media.
+                window.setTimeout(function () {
+                    if ($gallery.data('isotope')) {
+                        $gallery.isotope('layout');
+                        $gallery.removeClass('is-layout-pending').addClass('is-layout-ready');
+                    }
+                }, 120);
+            });
+        };
+
         $gallery = $gallery.isotope({
             itemSelector: '.items',
             layoutMode: 'masonry',
@@ -121,12 +151,28 @@ $(window).on("load", function (){
             transitionDuration: '0.5s'
         });
 
+        $gallery.find('img').each(function () {
+            var $image = $(this);
+
+            if (this.complete && this.naturalWidth !== 0) {
+                return;
+            }
+
+            $image.one('load error', function () {
+                scheduleGalleryLayout();
+            });
+        });
+
+        scheduleGalleryLayout();
+        wind.on('resize', scheduleGalleryLayout);
+
         // filter items on button click
         $('.filtering').on('click', 'span', function () {
 
             var filterValue = $(this).attr('data-filter');
             $gallery.isotope({ filter: filterValue });
             $(this).addClass('active').siblings().removeClass('active');
+            scheduleGalleryLayout();
 
         });
     }

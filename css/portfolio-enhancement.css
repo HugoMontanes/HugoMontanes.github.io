@@ -103,6 +103,15 @@
 /* Ensure portfolio items display correctly */
 .portfolio .gallery {
     display: block;
+    transition: opacity .25s ease;
+}
+
+.portfolio .gallery.is-layout-pending {
+    opacity: 0;
+}
+
+.portfolio .gallery.is-layout-ready {
+    opacity: 1;
 }
 
 .portfolio .items {
